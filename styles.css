@@ -1,0 +1,698 @@
+/* ============================================
+   IMPORT FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   ROOT VARIABLES
+   ============================================ */
+:root {
+    /* Color Palette */
+    --primary-dark: #1a1a2e;
+    --primary-lighter: #16213e;
+    --accent-color: #00b4d8;
+    --accent-light: #00d4ff;
+    --text-dark: #2c3e50;
+    --text-light: #555555;
+    --text-muted: #888888;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    /* Typography */
+    --font-family-headings: 'Poppins', sans-serif;
+    --font-family-body: 'Inter', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-light);
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.nav-logo {
+    font-family: var(--font-family-headings);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--bg-white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: block;
+    padding: var(--spacing-xs) 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-lighter) 100%);
+    color: var(--bg-white);
+    padding: 7rem var(--spacing-lg) var(--spacing-xxl);
+    margin-top: 60px;
+    text-align: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+}
+
+.name {
+    color: var(--bg-white);
+    margin-bottom: var(--spacing-md);
+}
+
+address {
+    font-style: normal;
+}
+
+.contact-info {
+    margin-top: var(--spacing-lg);
+}
+
+.contact-info p {
+    color: #e0e0e0;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-info a {
+    color: var(--accent-light);
+}
+
+.contact-info a:hover {
+    color: var(--bg-white);
+    text-decoration: underline;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   SECTIONS (GENERAL STYLING)
+   ============================================ */
+section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.section-title {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+.education-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.education-item {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--accent-color);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition);
+}
+
+.education-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.education-degree {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.education-institution {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.education-specialization {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-xs);
+}
+
+.education-duration {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.education-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+.experience-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.experience-item {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.experience-item:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.job-title {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.company-name {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.job-responsibilities {
+    list-style: none;
+    margin-top: var(--spacing-sm);
+}
+
+.job-responsibilities li {
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    color: var(--text-light);
+}
+
+.job-responsibilities li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* ============================================
+   LEADERSHIP SECTION
+   ============================================ */
+.leadership-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.leadership-item {
+    padding: var(--spacing-lg);
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.leadership-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.leadership-role {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.event-name {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.event-year {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.leadership-responsibilities {
+    list-style: none;
+    margin-top: var(--spacing-sm);
+}
+
+.leadership-responsibilities li {
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    color: var(--text-light);
+}
+
+.leadership-responsibilities li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+.skills-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.skill-item {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    color: var(--bg-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   ACHIEVEMENTS SECTION
+   ============================================ */
+.achievements-section {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.achievements-list {
+    list-style: none;
+    margin-top: var(--spacing-lg);
+}
+
+.achievement-item {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--accent-color);
+    border-radius: var(--border-radius-md);
+    position: relative;
+    padding-left: var(--spacing-lg);
+    transition: var(--transition);
+    color: var(--text-light);
+}
+
+.achievement-item:hover {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-md);
+}
+
+.achievement-item::before {
+    position: absolute;
+    left: var(--spacing-sm);
+    color: var(--accent-color);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
+    text-align: center;
+    border-top: 3px solid var(--accent-color);
+}
+
+.footer-content p {
+    color: #e0e0e0;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact a {
+    color: var(--accent-light);
+}
+
+.footer-contact a:hover {
+    color: var(--bg-white);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 15px;
+        --spacing-xl: 2.5rem;
+        --spacing-xxl: 3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .header {
+        padding: 5rem var(--spacing-md) var(--spacing-xl);
+        margin-top: 60px;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .main-content {
+        padding: 0 var(--spacing-md);
+    }
+
+    section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .about-section,
+    .education-section,
+    .experience-section,
+    .leadership-section,
+    .skills-section,
+    .achievements-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .skill-item {
+        padding: var(--spacing-md) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 14px;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-xxl: 2.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .header {
+        padding: 4rem var(--spacing-md) var(--spacing-lg);
+        margin-top: 55px;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        padding: 0 var(--spacing-sm);
+    }
+
+    section {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .about-section,
+    .education-section,
+    .experience-section,
+    .leadership-section,
+    .skills-section,
+    .achievements-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .education-item,
+    .experience-item,
+    .leadership-item {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .skill-item {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .achievement-item {
+        padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+    }
+
+    .footer {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .footer-content p {
+        font-size: 0.85rem;
+    }
+}
